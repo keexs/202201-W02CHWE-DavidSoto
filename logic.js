@@ -1,18 +1,7 @@
-const rows = 10;
-const colums = 10;
-const newGrid = [];
-
-function grid() {
-  for (let i = 0; i < rows; i++) {
-    newGrid[i] = i;
-    for (let j = 0; j < colums; j++) {
-      newGrid[i][j] = j;
-    }
-  }
-  return newGrid;
+function setGrid(rows, columns) {
+  const grid = Array(rows).fill(Array(columns).fill(0));
+  return grid;
 }
-
-grid();
-newGrid.fill(0);
-newGrid[2] = 2;
-console.log(newGrid);
+const newGrid = setGrid(5, 10);
+newGrid[2][3] = "something";
+console.table(newGrid);
