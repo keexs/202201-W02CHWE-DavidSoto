@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { grey } = require("color-name");
 
 const rows = 10;
@@ -12,6 +13,7 @@ function setGrid() {
 // eslint-disable-next-line prefer-const
 let newGrid = setGrid();
 
+// eslint-disable-next-line no-unused-vars
 function drawGrid() {
   document.body.style.background = grey;
   for (let i = 0; i < rows; i++) {
