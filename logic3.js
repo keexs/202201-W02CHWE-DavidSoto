@@ -74,22 +74,21 @@ function countNeighbors(row, col) {
   return count;
 }
 
-function drawNewGeneration(){
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-        if(grid[i][j] === 1){
-          if(count === 1){
-            grid[i][j] = 0;
-          }
-          if(count === 4){
-            grid[i][j] = 0;
-          }
+// eslint-disable-next-line no-unused-vars
+function setNewCellStatus() {
+  const count = countNeighbors();
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      if (grid[i][j] === 1) {
+        if (count === 1 || count === 4) {
+          grid[i][j] = 0;
         }
-        if(grid[i][j] === 0){
-          if(count === 3){
-            grid[i][j] = 1;
-          }
-        }
+      }
+      if (grid[i][j] === 0 && count === 3) {
+        grid[i][j] = 1;
+      }
+    }
+  }
 }
 
 drawGrid();
